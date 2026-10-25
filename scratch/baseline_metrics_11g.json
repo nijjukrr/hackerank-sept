@@ -1,0 +1,17 @@
+{
+  "total_cases": 32,
+  "correct_status": 32,
+  "status_accuracy": 1.0,
+  "exact_case_match": 15,
+  "exact_case_accuracy": 0.46875,
+  "exact_step_seq_match": 15,
+  "step_count_match": 15,
+  "total_expected_steps": 193,
+  "matched_steps": 127,
+  "step_accuracy": 0.6580310880829016,
+  "matched_tuples": 126,
+  "tuple_accuracy": 0.6528497409326425,
+  "total_cells": 1351,
+  "matched_cells": 1016,
+  "field_cell_accuracy": 0.7520355292376018
+}

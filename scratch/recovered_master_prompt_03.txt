@@ -1,0 +1,80 @@
+# MASTER PROMPT 03 — INVESTIGATE LOW STEP-LEVEL ACCURACY
+## HackerRank Orchestrate October 2026 — Ghost Data Still Exists
+
+### Mission
+
+Investigate the low public-benchmark step-level agreement before making any submission decision.
+
+The latest audit reports:
+- Public sample status accuracy: 32/32 (100%).
+- Exact step-sequence agreement: 11/32 (34.38%).
+- Exact full-case agreement: 10/32 (31.25%).
+- Step-field accuracy: 67/193 (34.72%).
+
+These are reported results that must be reproduced independently.
+
+### Strict boundaries
+
+1. Work only in the existing October challenge workspace.
+2. Do not touch any September challenge project.
+3. Do not submit to HackerRank.
+4. Do not push, create commits, change Git remotes, or perform external actions.
+5. Do not delete or rewrite the existing audit log.
+6. Preserve the current `output.csv`, `code.zip`, and audit report as a baseline. Make backups before any modifications.
+7. Do not weaken cutoff enforcement or add sample-specific hardcoding merely to improve benchmark agreement.
+
+### Phase 1 — Reproduce the benchmark
+
+Run the current solution against the official public sample.
+
+Independently calculate and report:
+- Status accuracy.
+- Exact step-sequence agreement.
+- Exact full-case agreement.
+- Per-field accuracy for each step field.
+- Step-count agreement.
+- Missing, extra, reordered, and mismatched steps.
+- The number of cases with zero, partial, and complete step agreement.
+
+Confirm the comparison uses the correct sample input, sample output, and freshly generated prediction. Check case IDs before comparing rows.
+
+### Phase 2 — Produce a case-by-case discrepancy table
+
+For all 32 public cases, create a table containing:
+- `case_id`.
+- Expected status and predicted status.
+- Expected step count and predicted step count.
+- Exact sequence match: yes/no.
+- First mismatching step or field.
+- Expected evidence ID and predicted evidence ID.
+- Preliminary discrepancy category.
+
+Use these categories where 
+<truncated 3619 bytes>
+asses validation.
+9. Repeat the clean-extraction test and determinism check.
+
+If the discrepancy is caused by an ambiguous or apparently inconsistent benchmark requirement, do not silently modify the implementation to imitate it. Document the ambiguity and preserve the evidence.
+
+### Phase 7 — Final report
+
+Create `STEP_ACCURACY_INVESTIGATION.md` with:
+- Reproduced baseline metrics.
+- The 32-case discrepancy table.
+- Root cause for each mismatch, where established.
+- Source-backed analysis of cutoff-related differences.
+- Confirmed defects versus unresolved ambiguities.
+- Changes made and regression tests added.
+- Before-and-after metrics.
+- Results of full-dataset validation.
+- Remaining risks and recommended next action.
+
+### Required final decision
+
+Choose exactly one:
+
+- `READY FOR HUMAN REVIEW` — the discrepancies have been explained, confirmed defects fixed, and all required tests rerun.
+- `NOT READY — CONFIRMED DEFECTS REMAIN` — one or more confirmed defects remain.
+- `BLOCKED — SPECIFICATION OR BENCHMARK AMBIGUITY` — a material discrepancy cannot be resolved from authoritative rules and evidence.
+
+Do not claim a perfect solution merely because the status accuracy is 100%. Do not submit anything. Finish by giving me the exact metrics, the most important findings, and the next action I should take.

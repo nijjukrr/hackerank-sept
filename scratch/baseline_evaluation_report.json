@@ -1,0 +1,140 @@
+{
+  "metrics": {
+    "step_count_agreement": "15/32 (46.88%)",
+    "exact_7_tuples": "126/193 (65.28%)",
+    "positional_5_key": "127/193 (65.80%)",
+    "field_cell_accuracy": "1016/1351 (75.20%)",
+    "exact_full_case": "15/32 (46.88%)",
+    "status_accuracy": "32/32 (100.00%)"
+  },
+  "case_step_counts": {
+    "case_01": {
+      "expected": 1,
+      "predicted": 1
+    },
+    "case_02": {
+      "expected": 1,
+      "predicted": 1
+    },
+    "case_03": {
+      "expected": 3,
+      "predicted": 2
+    },
+    "case_04": {
+      "expected": 2,
+      "predicted": 1
+    },
+    "case_05": {
+      "expected": 3,
+      "predicted": 3
+    },
+    "case_06": {
+      "expected": 4,
+      "predicted": 4
+    },
+    "case_07": {
+      "expected": 4,
+      "predicted": 4
+    },
+    "case_08": {
+      "expected": 4,
+      "predicted": 4
+    },
+    "case_09": {
+      "expected": 5,
+      "predicted": 3
+    },
+    "case_10": {
+      "expected": 4,
+      "predicted": 4
+    },
+    "case_11": {
+      "expected": 14,
+      "predicted": 14
+    },
+    "case_12": {
+      "expected": 5,
+      "predicted": 5
+    },
+    "case_13": {
+      "expected": 8,
+      "predicted": 8
+    },
+    "case_14": {
+      "expected": 5,
+      "predicted": 5
+    },
+    "case_15": {
+      "expected": 5,
+      "predicted": 5
+    },
+    "case_16": {
+      "expected": 7,
+      "predicted": 7
+    },
+    "case_17": {
+      "expected": 5,
+      "predicted": 5
+    },
+    "case_18": {
+      "expected": 14,
+      "predicted": 12
+    },
+    "case_19": {
+      "expected": 8,
+      "predicted": 8
+    },
+    "case_20": {
+      "expected": 8,
+      "predicted": 6
+    },
+    "case_21": {
+      "expected": 3,
+      "predicted": 1
+    },
+    "case_22": {
+      "expected": 8,
+      "predicted": 7
+    },
+    "case_23": {
+      "expected": 8,
+      "predicted": 6
+    },
+    "case_24": {
+      "expected": 7,
+      "predicted": 6
+    },
+    "case_25": {
+      "expected": 3,
+      "predicted": 1
+    },
+    "case_26": {
+      "expected": 6,
+      "predicted": 4
+    },
+    "case_27": {
+      "expected": 6,
+      "predicted": 4
+    },
+    "case_28": {
+      "expected": 6,
+      "predicted": 4
+    },
+    "case_29": {
+      "expected": 14,
+      "predicted": 12
+    },
+    "case_30": {
+      "expected": 14,
+      "predicted": 12
+    },
+    "case_31": {
+      "expected": 3,
+      "predicted": 2
+    },
+    "case_32": {
+      "expected": 5,
+      "predicted": 4
+    }
+  }
+}

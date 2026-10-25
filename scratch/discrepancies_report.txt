@@ -1,0 +1,304 @@
+==============================
+CASE: case_03 (Expected: 3 steps, Pred: 2 steps)
+==============================
+--- EXPECTED STEPS ---
+  [1] VERIFICATION | account_service | account_7566 | VERIFY_RECORD_ABSENT | ABSENT | ev=evidence_94 -> in_pred=True
+  [2] VERIFICATION | security_service | audit_record_2016 | VERIFY_RECORD_PRESENT | PRESENT | ev=evidence_94 -> in_pred=True
+  [3] VERIFICATION | analytics_platform | analytics_9406 | VERIFY_RECORD_ANONYMIZED | ANONYMIZED | ev=evidence_94 -> in_pred=False
+--- PREDICTED STEPS ---
+  [1] VERIFICATION | account_service | account_7566 | VERIFY_RECORD_ABSENT | ABSENT | ev=evidence_94 -> in_truth=True
+  [2] VERIFICATION | security_service | audit_record_2016 | VERIFY_RECORD_PRESENT | PRESENT | ev=evidence_94 -> in_truth=True
+
+==============================
+CASE: case_04 (Expected: 2 steps, Pred: 1 steps)
+==============================
+--- EXPECTED STEPS ---
+  [1] VERIFICATION | account_service | account_004 | VERIFY_RECORD_ABSENT | ABSENT | ev=evidence_54 -> in_pred=False
+  [2] VERIFICATION | analytics_platform | analytics_901 | VERIFY_RECORD_ANONYMIZED | ANONYMIZED | ev=evidence_56 -> in_pred=False
+--- PREDICTED STEPS ---
+  [1] VERIFICATION | account_service | account_004 | VERIFY_RECORD_ABSENT | ABSENT | ev=evidence_90 -> in_truth=False
+
+==============================
+CASE: case_09 (Expected: 5 steps, Pred: 3 steps)
+==============================
+--- EXPECTED STEPS ---
+  [1] FINDING | backup_service | backup_4978 | REPORT_RESTORE_RISK | ACTIVE | ev=evidence_93 -> in_pred=True
+  [2] REMEDIATION | backup_service | backup_4978 | BLOCK_RESTORE | BLOCKED | ev= -> in_pred=True
+  [3] VERIFICATION | account_service | account_3960 | VERIFY_RECORD_ABSENT | ABSENT | ev= -> in_pred=False
+  [4] VERIFICATION | security_service | audit_record_4902 | VERIFY_RECORD_PRESENT | PRESENT | ev= -> in_pred=False
+  [5] VERIFICATION | backup_service | backup_4978 | VERIFY_RESTORE_BLOCKED | BLOCKED | ev= -> in_pred=False
+--- PREDICTED STEPS ---
+  [1] FINDING | backup_service | backup_4978 | REPORT_RESTORE_RISK | ACTIVE | ev=evidence_93 -> in_truth=True
+  [2] REMEDIATION | backup_service | backup_4978 | BLOCK_RESTORE | BLOCKED | ev= -> in_truth=True
+  [3] VERIFICATION | backup_service | backup_4978 | VERIFY_RESTORE_BLOCKED | BLOCKED | ev= -> in_truth=False
+
+==============================
+CASE: case_18 (Expected: 14 steps, Pred: 12 steps)
+==============================
+--- EXPECTED STEPS ---
+  [1] FINDING | search_service | search_4013 | REPORT_REMAINING_RECORD | PRESENT | ev=evidence_94 -> in_pred=True
+  [2] FINDING | analytics_platform | analytics_037 | REPORT_EXPOSED_PII | PRESENT | ev=evidence_94 -> in_pred=True
+  [3] FINDING | support_platform | support_5569 | REPORT_EXPOSED_PII | PRESENT | ev=evidence_94 -> in_pred=True
+  [4] FINDING | integration_service | data_flow_4890 | REPORT_ACTIVE_DATA_FLOW | ACTIVE | ev=evidence_94 -> in_pred=True
+  [5] REMEDIATION | integration_service | data_flow_4890 | DISABLE_DATA_FLOW | DISABLED | ev= -> in_pred=True
+  [6] REMEDIATION | search_service | search_4013 | DELETE_RECORD | ABSENT | ev= -> in_pred=True
+  [7] REMEDIATION | support_platform | support_5569 | REDACT_RECORD | REDACTED | ev= -> in_pred=True
+  [8] REMEDIATION | analytics_platform | analytics_037 | ANONYMIZE_RECORD | ANONYMIZED | ev= -> in_pred=True
+  [9] VERIFICATION | account_service | account_5521 | VERIFY_RECORD_ABSENT | ABSENT | ev= -> in_pred=False
+  [10] VERIFICATION | search_service | search_4013 | VERIFY_RECORD_ABSENT | ABSENT | ev= -> in_pred=False
+  [11] VERIFICATION | security_service | audit_record_6645 | VERIFY_RECORD_PRESENT | PRESENT | ev= -> in_pred=False
+  [12] VERIFICATION | support_platform | support_5569 | VERIFY_RECORD_REDACTED | REDACTED | ev= -> in_pred=False
+  [13] VERIFICATION | analytics_platform | analytics_037 | VERIFY_RECORD_ANONYMIZED | ANONYMIZED | ev= -> in_pred=False
+  [14] VERIFICATION | integration_service | data_flow_4890 | VERIFY_DATA_FLOW_DISABLED | DISABLED | ev= -> in_pred=False
+--- PREDICTED STEPS ---
+  [1] FINDING | search_service | search_4013 | REPORT_REMAINING_RECORD | PRESENT | ev=evidence_94 -> in_truth=True
+  [2] FINDING | analytics_platform | analytics_037 | REPORT_EXPOSED_PII | PRESENT | ev=evidence_94 -> in_truth=True
+  [3] FINDING | support_platform | support_5569 | REPORT_EXPOSED_PII | PRESENT | ev=evidence_94 -> in_truth=True
+  [4] FINDING | integration_service | data_flow_4890 | REPORT_ACTIVE_DATA_FLOW | ACTIVE | ev=evidence_94 -> in_truth=True
+  [5] REMEDIATION | integration_service | data_flow_4890 | DISABLE_DATA_FLOW | DISABLED | ev= -> in_truth=True
+  [6] REMEDIATION | search_service | search_4013 | DELETE_RECORD | ABSENT | ev= -> in_truth=True
+  [7] REMEDIATION | support_platform | support_5569 | REDACT_RECORD | REDACTED | ev= -> in_truth=True
+  [8] REMEDIATION | analytics_platform | analytics_037 | ANONYMIZE_RECORD | ANONYMIZED | ev= -> in_truth=True
+  [9] VERIFICATION | search_service | search_4013 | VERIFY_RECORD_ABSENT | ABSENT | ev= -> in_truth=False
+  [10] VERIFICATION | support_platform | support_5569 | VERIFY_RECORD_REDACTED | REDACTED | ev= -> in_truth=False
+  [11] VERIFICATION | analytics_platform | analytics_037 | VERIFY_RECORD_ANONYMIZED | ANONYMIZED | ev= -> in_truth=False
+  [12] VERIFICATION | integration_service | data_flow_4890 | VERIFY_DATA_FLOW_DISABLED | DISABLED | ev= -> in_truth=False
+
+==============================
+CASE: case_20 (Expected: 8 steps, Pred: 6 steps)
+==============================
+--- EXPECTED STEPS ---
+  [1] FINDING | search_service | search_4262 | REPORT_REMAINING_RECORD | PRESENT | ev=evidence_94 -> in_pred=True
+  [2] FINDING | integration_service | data_flow_1770 | REPORT_ACTIVE_DATA_FLOW | ACTIVE | ev=evidence_94 -> in_pred=True
+  [3] REMEDIATION | integration_service | data_flow_1770 | DISABLE_DATA_FLOW | DISABLED | ev= -> in_pred=True
+  [4] REMEDIATION | search_service | search_4262 | DELETE_RECORD | ABSENT | ev= -> in_pred=True
+  [5] VERIFICATION | account_service | account_5037 | VERIFY_RECORD_ABSENT | ABSENT | ev= -> in_pred=False
+  [6] VERIFICATION | search_service | search_4262 | VERIFY_RECORD_ABSENT | ABSENT | ev= -> in_pred=False
+  [7] VERIFICATION | security_service | audit_record_5569 | VERIFY_RECORD_PRESENT | PRESENT | ev= -> in_pred=False
+  [8] VERIFICATION | integration_service | data_flow_1770 | VERIFY_DATA_FLOW_DISABLED | DISABLED | ev= -> in_pred=False
+--- PREDICTED STEPS ---
+  [1] FINDING | search_service | search_4262 | REPORT_REMAINING_RECORD | PRESENT | ev=evidence_94 -> in_truth=True
+  [2] FINDING | integration_service | data_flow_1770 | REPORT_ACTIVE_DATA_FLOW | ACTIVE | ev=evidence_94 -> in_truth=True
+  [3] REMEDIATION | integration_service | data_flow_1770 | DISABLE_DATA_FLOW | DISABLED | ev= -> in_truth=True
+  [4] REMEDIATION | search_service | search_4262 | DELETE_RECORD | ABSENT | ev= -> in_truth=True
+  [5] VERIFICATION | search_service | search_4262 | VERIFY_RECORD_ABSENT | ABSENT | ev= -> in_truth=False
+  [6] VERIFICATION | integration_service | data_flow_1770 | VERIFY_DATA_FLOW_DISABLED | DISABLED | ev= -> in_truth=False
+
+==============================
+CASE: case_21 (Expected: 3 steps, Pred: 1 steps)
+==============================
+--- EXPECTED STEPS ---
+  [1] VERIFICATION | account_service | account_6440 | VERIFY_RECORD_ABSENT | ABSENT | ev=evidence_92 -> in_pred=False
+  [2] VERIFICATION | security_service | audit_record_3737 | VERIFY_RECORD_PRESENT | PRESENT | ev=evidence_92 -> in_pred=False
+  [3] VERIFICATION | analytics_platform | analytics_5335 | VERIFY_RECORD_ANONYMIZED | ANONYMIZED | ev=evidence_92 -> in_pred=False
+--- PREDICTED STEPS ---
+  [1] VERIFICATION | security_service | audit_record_3737 | VERIFY_RECORD_PRESENT | PRESENT | ev=evidence_92 -> in_truth=False
+
+==============================
+CASE: case_22 (Expected: 8 steps, Pred: 7 steps)
+==============================
+--- EXPECTED STEPS ---
+  [1] FINDING | search_service | search_8911 | REPORT_REMAINING_RECORD | PRESENT | ev=evidence_05 -> in_pred=True
+  [2] FINDING | analytics_platform | analytics_4440 | REPORT_EXPOSED_PII | PRESENT | ev=evidence_05 -> in_pred=True
+  [3] REMEDIATION | search_service | search_8911 | DELETE_RECORD | ABSENT | ev= -> in_pred=True
+  [4] REMEDIATION | analytics_platform | analytics_4440 | ANONYMIZE_RECORD | ANONYMIZED | ev= -> in_pred=True
+  [5] VERIFICATION | account_service | account_4990 | VERIFY_RECORD_ABSENT | ABSENT | ev= -> in_pred=False
+  [6] VERIFICATION | search_service | search_8911 | VERIFY_RECORD_ABSENT | ABSENT | ev= -> in_pred=False
+  [7] VERIFICATION | security_service | audit_record_3482 | VERIFY_RECORD_PRESENT | PRESENT | ev= -> in_pred=False
+  [8] VERIFICATION | analytics_platform | analytics_4440 | VERIFY_RECORD_ANONYMIZED | ANONYMIZED | ev= -> in_pred=False
+--- PREDICTED STEPS ---
+  [1] FINDING | search_service | search_8911 | REPORT_REMAINING_RECORD | PRESENT | ev=evidence_05 -> in_truth=True
+  [2] FINDING | analytics_platform | analytics_4440 | REPORT_EXPOSED_PII | PRESENT | ev=evidence_05 -> in_truth=True
+  [3] REMEDIATION | search_service | search_8911 | DELETE_RECORD | ABSENT | ev= -> in_truth=True
+  [4] REMEDIATION | analytics_platform | analytics_4440 | ANONYMIZE_RECORD | ANONYMIZED | ev= -> in_truth=True
+  [5] VERIFICATION | search_service | search_8911 | VERIFY_RECORD_ABSENT | ABSENT | ev= -> in_truth=False
+  [6] VERIFICATION | security_service | audit_record_3482 | VERIFY_RECORD_PRESENT | PRESENT | ev= -> in_truth=False
+  [7] VERIFICATION | analytics_platform | analytics_4440 | VERIFY_RECORD_ANONYMIZED | ANONYMIZED | ev= -> in_truth=False
+
+==============================
+CASE: case_23 (Expected: 8 steps, Pred: 6 steps)
+==============================
+--- EXPECTED STEPS ---
+  [1] FINDING | export_service | export_7364 | REPORT_REMAINING_RECORD | PRESENT | ev=evidence_92 -> in_pred=True
+  [2] FINDING | search_service | search_898 | REPORT_REMAINING_RECORD | PRESENT | ev=evidence_92 -> in_pred=True
+  [3] REMEDIATION | export_service | export_7364 | DELETE_RECORD | ABSENT | ev= -> in_pred=True
+  [4] REMEDIATION | search_service | search_898 | DELETE_RECORD | ABSENT | ev= -> in_pred=True
+  [5] VERIFICATION | account_service | account_410 | VERIFY_RECORD_ABSENT | ABSENT | ev= -> in_pred=False
+  [6] VERIFICATION | export_service | export_7364 | VERIFY_RECORD_ABSENT | ABSENT | ev= -> in_pred=False
+  [7] VERIFICATION | search_service | search_898 | VERIFY_RECORD_ABSENT | ABSENT | ev= -> in_pred=False
+  [8] VERIFICATION | security_service | audit_record_4128 | VERIFY_RECORD_PRESENT | PRESENT | ev= -> in_pred=False
+--- PREDICTED STEPS ---
+  [1] FINDING | export_service | export_7364 | REPORT_REMAINING_RECORD | PRESENT | ev=evidence_92 -> in_truth=True
+  [2] FINDING | search_service | search_898 | REPORT_REMAINING_RECORD | PRESENT | ev=evidence_92 -> in_truth=True
+  [3] REMEDIATION | export_service | export_7364 | DELETE_RECORD | ABSENT | ev= -> in_truth=True
+  [4] REMEDIATION | search_service | search_898 | DELETE_RECORD | ABSENT | ev= -> in_truth=True
+  [5] VERIFICATION | export_service | export_7364 | VERIFY_RECORD_ABSENT | ABSENT | ev= -> in_truth=False
+  [6] VERIFICATION | search_service | search_898 | VERIFY_RECORD_ABSENT | ABSENT | ev= -> in_truth=False
+
+==============================
+CASE: case_24 (Expected: 7 steps, Pred: 6 steps)
+==============================
+--- EXPECTED STEPS ---
+  [1] FINDING | account_service | account_5334 | REPORT_REMAINING_RECORD | PRESENT | ev=evidence_92 -> in_pred=True
+  [2] FINDING | search_service | search_5577 | REPORT_REMAINING_RECORD | PRESENT | ev=evidence_92 -> in_pred=True
+  [3] REMEDIATION | account_service | account_5334 | DELETE_RECORD | ABSENT | ev= -> in_pred=True
+  [4] REMEDIATION | search_service | search_5577 | DELETE_RECORD | ABSENT | ev= -> in_pred=True
+  [5] VERIFICATION | account_service | account_5334 | VERIFY_RECORD_ABSENT | ABSENT | ev= -> in_pred=True
+  [6] VERIFICATION | search_service | search_5577 | VERIFY_RECORD_ABSENT | ABSENT | ev= -> in_pred=True
+  [7] VERIFICATION | security_service | audit_record_7095 | VERIFY_RECORD_PRESENT | PRESENT | ev= -> in_pred=False
+--- PREDICTED STEPS ---
+  [1] FINDING | account_service | account_5334 | REPORT_REMAINING_RECORD | PRESENT | ev=evidence_92 -> in_truth=True
+  [2] FINDING | search_service | search_5577 | REPORT_REMAINING_RECORD | PRESENT | ev=evidence_92 -> in_truth=True
+  [3] REMEDIATION | account_service | account_5334 | DELETE_RECORD | ABSENT | ev= -> in_truth=True
+  [4] REMEDIATION | search_service | search_5577 | DELETE_RECORD | ABSENT | ev= -> in_truth=True
+  [5] VERIFICATION | account_service | account_5334 | VERIFY_RECORD_ABSENT | ABSENT | ev= -> in_truth=True
+  [6] VERIFICATION | search_service | search_5577 | VERIFY_RECORD_ABSENT | ABSENT | ev= -> in_truth=True
+
+==============================
+CASE: case_25 (Expected: 3 steps, Pred: 1 steps)
+==============================
+--- EXPECTED STEPS ---
+  [1] VERIFICATION | account_service | account_3136 | VERIFY_RECORD_ABSENT | ABSENT | ev=evidence_92 -> in_pred=False
+  [2] VERIFICATION | security_service | audit_record_451 | VERIFY_RECORD_PRESENT | PRESENT | ev=evidence_92 -> in_pred=False
+  [3] VERIFICATION | analytics_platform | analytics_1895 | VERIFY_RECORD_ANONYMIZED | ANONYMIZED | ev=evidence_92 -> in_pred=False
+--- PREDICTED STEPS ---
+  [1] VERIFICATION | security_service | audit_record_451 | VERIFY_RECORD_PRESENT | PRESENT | ev=evidence_92 -> in_truth=False
+
+==============================
+CASE: case_26 (Expected: 6 steps, Pred: 4 steps)
+==============================
+--- EXPECTED STEPS ---
+  [1] VERIFICATION | account_service | account_5684 | VERIFY_RECORD_ABSENT | ABSENT | ev=evidence_92 -> in_pred=False
+  [2] VERIFICATION | security_service | audit_record_5416 | VERIFY_RECORD_PRESENT | PRESENT | ev=evidence_92 -> in_pred=False
+  [3] VERIFICATION | support_platform | support_4715 | VERIFY_RECORD_REDACTED | REDACTED | ev=evidence_92 -> in_pred=False
+  [4] VERIFICATION | analytics_platform | analytics_4566 | VERIFY_RECORD_ANONYMIZED | ANONYMIZED | ev=evidence_92 -> in_pred=False
+  [5] VERIFICATION | integration_service | data_flow_6244 | VERIFY_DATA_FLOW_DISABLED | DISABLED | ev=evidence_92 -> in_pred=False
+  [6] VERIFICATION | backup_service | backup_3120 | VERIFY_RESTORE_BLOCKED | BLOCKED | ev=evidence_92 -> in_pred=False
+--- PREDICTED STEPS ---
+  [1] VERIFICATION | security_service | audit_record_5416 | VERIFY_RECORD_PRESENT | PRESENT | ev=evidence_92 -> in_truth=False
+  [2] VERIFICATION | support_platform | support_4715 | VERIFY_RECORD_REDACTED | REDACTED | ev=evidence_92 -> in_truth=False
+  [3] VERIFICATION | integration_service | data_flow_6244 | VERIFY_DATA_FLOW_DISABLED | DISABLED | ev=evidence_92 -> in_truth=False
+  [4] VERIFICATION | backup_service | backup_3120 | VERIFY_RESTORE_BLOCKED | BLOCKED | ev=evidence_92 -> in_truth=False
+
+==============================
+CASE: case_27 (Expected: 6 steps, Pred: 4 steps)
+==============================
+--- EXPECTED STEPS ---
+  [1] VERIFICATION | account_service | account_3866 | VERIFY_RECORD_ABSENT | ABSENT | ev=evidence_92 -> in_pred=False
+  [2] VERIFICATION | security_service | audit_record_3830 | VERIFY_RECORD_PRESENT | PRESENT | ev=evidence_92 -> in_pred=False
+  [3] VERIFICATION | support_platform | support_4707 | VERIFY_RECORD_REDACTED | REDACTED | ev=evidence_92 -> in_pred=False
+  [4] VERIFICATION | analytics_platform | analytics_4574 | VERIFY_RECORD_ANONYMIZED | ANONYMIZED | ev=evidence_92 -> in_pred=False
+  [5] VERIFICATION | integration_service | data_flow_2295 | VERIFY_DATA_FLOW_DISABLED | DISABLED | ev=evidence_92 -> in_pred=False
+  [6] VERIFICATION | backup_service | backup_5970 | VERIFY_RESTORE_BLOCKED | BLOCKED | ev=evidence_92 -> in_pred=False
+--- PREDICTED STEPS ---
+  [1] VERIFICATION | security_service | audit_record_3830 | VERIFY_RECORD_PRESENT | PRESENT | ev=evidence_92 -> in_truth=False
+  [2] VERIFICATION | support_platform | support_4707 | VERIFY_RECORD_REDACTED | REDACTED | ev=evidence_92 -> in_truth=False
+  [3] VERIFICATION | integration_service | data_flow_2295 | VERIFY_DATA_FLOW_DISABLED | DISABLED | ev=evidence_92 -> in_truth=False
+  [4] VERIFICATION | backup_service | backup_5970 | VERIFY_RESTORE_BLOCKED | BLOCKED | ev=evidence_92 -> in_truth=False
+
+==============================
+CASE: case_28 (Expected: 6 steps, Pred: 4 steps)
+==============================
+--- EXPECTED STEPS ---
+  [1] VERIFICATION | account_service | account_5482 | VERIFY_RECORD_ABSENT | ABSENT | ev=evidence_92 -> in_pred=False
+  [2] VERIFICATION | security_service | audit_record_9265 | VERIFY_RECORD_PRESENT | PRESENT | ev=evidence_92 -> in_pred=False
+  [3] VERIFICATION | support_platform | support_2351 | VERIFY_RECORD_REDACTED | REDACTED | ev=evidence_92 -> in_pred=False
+  [4] VERIFICATION | analytics_platform | analytics_6077 | VERIFY_RECORD_ANONYMIZED | ANONYMIZED | ev=evidence_92 -> in_pred=False
+  [5] VERIFICATION | integration_service | data_flow_2337 | VERIFY_DATA_FLOW_DISABLED | DISABLED | ev=evidence_92 -> in_pred=False
+  [6] VERIFICATION | backup_service | backup_838 | VERIFY_RESTORE_BLOCKED | BLOCKED | ev=evidence_92 -> in_pred=False
+--- PREDICTED STEPS ---
+  [1] VERIFICATION | security_service | audit_record_9265 | VERIFY_RECORD_PRESENT | PRESENT | ev=evidence_92 -> in_truth=False
+  [2] VERIFICATION | support_platform | support_2351 | VERIFY_RECORD_REDACTED | REDACTED | ev=evidence_92 -> in_truth=False
+  [3] VERIFICATION | integration_service | data_flow_2337 | VERIFY_DATA_FLOW_DISABLED | DISABLED | ev=evidence_92 -> in_truth=False
+  [4] VERIFICATION | backup_service | backup_838 | VERIFY_RESTORE_BLOCKED | BLOCKED | ev=evidence_92 -> in_truth=False
+
+==============================
+CASE: case_29 (Expected: 14 steps, Pred: 12 steps)
+==============================
+--- EXPECTED STEPS ---
+  [1] FINDING | search_service | search_1993 | REPORT_REMAINING_RECORD | PRESENT | ev=evidence_92 -> in_pred=True
+  [2] FINDING | analytics_platform | analytics_5208 | REPORT_EXPOSED_PII | PRESENT | ev=evidence_92 -> in_pred=True
+  [3] FINDING | support_platform | support_5281 | REPORT_EXPOSED_PII | PRESENT | ev=evidence_92 -> in_pred=True
+  [4] FINDING | integration_service | data_flow_3827 | REPORT_ACTIVE_DATA_FLOW | ACTIVE | ev=evidence_92 -> in_pred=True
+  [5] REMEDIATION | integration_service | data_flow_3827 | DISABLE_DATA_FLOW | DISABLED | ev= -> in_pred=True
+  [6] REMEDIATION | search_service | search_1993 | DELETE_RECORD | ABSENT | ev= -> in_pred=True
+  [7] REMEDIATION | support_platform | support_5281 | REDACT_RECORD | REDACTED | ev= -> in_pred=True
+  [8] REMEDIATION | analytics_platform | analytics_5208 | ANONYMIZE_RECORD | ANONYMIZED | ev= -> in_pred=True
+  [9] VERIFICATION | account_service | account_7012 | VERIFY_RECORD_ABSENT | ABSENT | ev= -> in_pred=False
+  [10] VERIFICATION | search_service | search_1993 | VERIFY_RECORD_ABSENT | ABSENT | ev= -> in_pred=False
+  [11] VERIFICATION | security_service | audit_record_3954 | VERIFY_RECORD_PRESENT | PRESENT | ev= -> in_pred=False
+  [12] VERIFICATION | support_platform | support_5281 | VERIFY_RECORD_REDACTED | REDACTED | ev= -> in_pred=False
+  [13] VERIFICATION | analytics_platform | analytics_5208 | VERIFY_RECORD_ANONYMIZED | ANONYMIZED | ev= -> in_pred=False
+  [14] VERIFICATION | integration_service | data_flow_3827 | VERIFY_DATA_FLOW_DISABLED | DISABLED | ev= -> in_pred=False
+--- PREDICTED STEPS ---
+  [1] FINDING | search_service | search_1993 | REPORT_REMAINING_RECORD | PRESENT | ev=evidence_92 -> in_truth=True
+  [2] FINDING | analytics_platform | analytics_5208 | REPORT_EXPOSED_PII | PRESENT | ev=evidence_92 -> in_truth=True
+  [3] FINDING | support_platform | support_5281 | REPORT_EXPOSED_PII | PRESENT | ev=evidence_92 -> in_truth=True
+  [4] FINDING | integration_service | data_flow_3827 | REPORT_ACTIVE_DATA_FLOW | ACTIVE | ev=evidence_92 -> in_truth=True
+  [5] REMEDIATION | integration_service | data_flow_3827 | DISABLE_DATA_FLOW | DISABLED | ev= -> in_truth=True
+  [6] REMEDIATION | search_service | search_1993 | DELETE_RECORD | ABSENT | ev= -> in_truth=True
+  [7] REMEDIATION | support_platform | support_5281 | REDACT_RECORD | REDACTED | ev= -> in_truth=True
+  [8] REMEDIATION | analytics_platform | analytics_5208 | ANONYMIZE_RECORD | ANONYMIZED | ev= -> in_truth=True
+  [9] VERIFICATION | search_service | search_1993 | VERIFY_RECORD_ABSENT | ABSENT | ev= -> in_truth=False
+  [10] VERIFICATION | support_platform | support_5281 | VERIFY_RECORD_REDACTED | REDACTED | ev= -> in_truth=False
+  [11] VERIFICATION | analytics_platform | analytics_5208 | VERIFY_RECORD_ANONYMIZED | ANONYMIZED | ev= -> in_truth=False
+  [12] VERIFICATION | integration_service | data_flow_3827 | VERIFY_DATA_FLOW_DISABLED | DISABLED | ev= -> in_truth=False
+
+==============================
+CASE: case_30 (Expected: 14 steps, Pred: 12 steps)
+==============================
+--- EXPECTED STEPS ---
+  [1] FINDING | search_service | search_9359 | REPORT_REMAINING_RECORD | PRESENT | ev=evidence_92 -> in_pred=True
+  [2] FINDING | analytics_platform | analytics_3697 | REPORT_EXPOSED_PII | PRESENT | ev=evidence_92 -> in_pred=True
+  [3] FINDING | support_platform | support_6477 | REPORT_EXPOSED_PII | PRESENT | ev=evidence_92 -> in_pred=True
+  [4] FINDING | integration_service | data_flow_8524 | REPORT_ACTIVE_DATA_FLOW | ACTIVE | ev=evidence_92 -> in_pred=True
+  [5] REMEDIATION | integration_service | data_flow_8524 | DISABLE_DATA_FLOW | DISABLED | ev= -> in_pred=True
+  [6] REMEDIATION | search_service | search_9359 | DELETE_RECORD | ABSENT | ev= -> in_pred=True
+  [7] REMEDIATION | support_platform | support_6477 | REDACT_RECORD | REDACTED | ev= -> in_pred=True
+  [8] REMEDIATION | analytics_platform | analytics_3697 | ANONYMIZE_RECORD | ANONYMIZED | ev= -> in_pred=True
+  [9] VERIFICATION | account_service | account_4163 | VERIFY_RECORD_ABSENT | ABSENT | ev= -> in_pred=False
+  [10] VERIFICATION | search_service | search_9359 | VERIFY_RECORD_ABSENT | ABSENT | ev= -> in_pred=False
+  [11] VERIFICATION | security_service | audit_record_1707 | VERIFY_RECORD_PRESENT | PRESENT | ev= -> in_pred=False
+  [12] VERIFICATION | support_platform | support_6477 | VERIFY_RECORD_REDACTED | REDACTED | ev= -> in_pred=False
+  [13] VERIFICATION | analytics_platform | analytics_3697 | VERIFY_RECORD_ANONYMIZED | ANONYMIZED | ev= -> in_pred=False
+  [14] VERIFICATION | integration_service | data_flow_8524 | VERIFY_DATA_FLOW_DISABLED | DISABLED | ev= -> in_pred=False
+--- PREDICTED STEPS ---
+  [1] FINDING | search_service | search_9359 | REPORT_REMAINING_RECORD | PRESENT | ev=evidence_92 -> in_truth=True
+  [2] FINDING | analytics_platform | analytics_3697 | REPORT_EXPOSED_PII | PRESENT | ev=evidence_92 -> in_truth=True
+  [3] FINDING | support_platform | support_6477 | REPORT_EXPOSED_PII | PRESENT | ev=evidence_92 -> in_truth=True
+  [4] FINDING | integration_service | data_flow_8524 | REPORT_ACTIVE_DATA_FLOW | ACTIVE | ev=evidence_92 -> in_truth=True
+  [5] REMEDIATION | integration_service | data_flow_8524 | DISABLE_DATA_FLOW | DISABLED | ev= -> in_truth=True
+  [6] REMEDIATION | search_service | search_9359 | DELETE_RECORD | ABSENT | ev= -> in_truth=True
+  [7] REMEDIATION | support_platform | support_6477 | REDACT_RECORD | REDACTED | ev= -> in_truth=True
+  [8] REMEDIATION | analytics_platform | analytics_3697 | ANONYMIZE_RECORD | ANONYMIZED | ev= -> in_truth=True
+  [9] VERIFICATION | search_service | search_9359 | VERIFY_RECORD_ABSENT | ABSENT | ev= -> in_truth=False
+  [10] VERIFICATION | support_platform | support_6477 | VERIFY_RECORD_REDACTED | REDACTED | ev= -> in_truth=False
+  [11] VERIFICATION | analytics_platform | analytics_3697 | VERIFY_RECORD_ANONYMIZED | ANONYMIZED | ev= -> in_truth=False
+  [12] VERIFICATION | integration_service | data_flow_8524 | VERIFY_DATA_FLOW_DISABLED | DISABLED | ev= -> in_truth=False
+
+==============================
+CASE: case_31 (Expected: 3 steps, Pred: 2 steps)
+==============================
+--- EXPECTED STEPS ---
+  [1] VERIFICATION | account_service | account_4857 | VERIFY_RECORD_ABSENT | ABSENT | ev=evidence_51 -> in_pred=False
+  [2] VERIFICATION | security_service | audit_record_6909 | VERIFY_RECORD_PRESENT | PRESENT | ev=evidence_51 -> in_pred=False
+  [3] VERIFICATION | identity_service | tombstone_440 | VERIFY_RECORD_REDACTED | REDACTED | ev=evidence_51 -> in_pred=False
+--- PREDICTED STEPS ---
+  [1] VERIFICATION | security_service | audit_record_6909 | VERIFY_RECORD_PRESENT | PRESENT | ev=evidence_51 -> in_truth=False
+  [2] VERIFICATION | identity_service | tombstone_440 | VERIFY_RECORD_REDACTED | REDACTED | ev=evidence_51 -> in_truth=False
+
+==============================
+CASE: case_32 (Expected: 5 steps, Pred: 4 steps)
+==============================
+--- EXPECTED STEPS ---
+  [1] FINDING | identity_service | tombstone_9178 | REPORT_EXPOSED_PII | PRESENT | ev=evidence_51 -> in_pred=True
+  [2] REMEDIATION | identity_service | tombstone_9178 | REDACT_RECORD | REDACTED | ev= -> in_pred=True
+  [3] VERIFICATION | account_service | account_8858 | VERIFY_RECORD_ABSENT | ABSENT | ev= -> in_pred=False
+  [4] VERIFICATION | security_service | audit_record_7068 | VERIFY_RECORD_PRESENT | PRESENT | ev= -> in_pred=False
+  [5] VERIFICATION | identity_service | tombstone_9178 | VERIFY_RECORD_REDACTED | REDACTED | ev= -> in_pred=False
+--- PREDICTED STEPS ---
+  [1] FINDING | identity_service | tombstone_9178 | REPORT_EXPOSED_PII | PRESENT | ev=evidence_51 -> in_truth=True
+  [2] REMEDIATION | identity_service | tombstone_9178 | REDACT_RECORD | REDACTED | ev= -> in_truth=True
+  [3] VERIFICATION | security_service | audit_record_7068 | VERIFY_RECORD_PRESENT | PRESENT | ev= -> in_truth=False
+  [4] VERIFICATION | identity_service | tombstone_9178 | VERIFY_RECORD_REDACTED | REDACTED | ev= -> in_truth=False
+
